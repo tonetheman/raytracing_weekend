@@ -20,6 +20,7 @@ void test_stb_write() {
 		buffer[(pos*STRIDE)+2] = 0;
 	}
 	stbi_write_png("out.png", 10,10, STRIDE, buffer, 10*STRIDE);
+	delete []buffer;
 }
 
 void test_stb_write2() {
@@ -35,6 +36,7 @@ void test_stb_write2() {
 		}
 	}
 	stbi_write_png("out2.png", 10, 10, STRIDE, buffer, 10*STRIDE);
+	delete []buffer;
 }
 
 int main() {
