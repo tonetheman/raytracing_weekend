@@ -15,6 +15,9 @@ public:
 
 	// unary plus
 	inline const vec3& operator+() const { return *this; }
+
+	// scalar mult
+	inline vec3& operator*=(const float t);
 };
 
 #endif
