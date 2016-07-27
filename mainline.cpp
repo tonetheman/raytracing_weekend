@@ -54,11 +54,32 @@ void test_stb_write3() {
 	stbi_write_png("out2.png", 10, 10, STRIDE, buffer, 10*STRIDE);
 	delete []buffer;
 }
+
+void testvec1() {
+	const int STRIDE = 3;
+	unsigned char buffer[100*100*STRIDE];
+	for(int i=0;i<100;i++) {
+		for(int j=0;j<100;j++) {
+			vec3 col(float(i)/100.0, float(j)/100.0, 0.2);
+
+			int pos = i*100 + j;
+			int rp = pos * STRIDE;
+			buffer[rp] = int(255.99*col[0]);
+			buffer[rp+1] = int(255.99*col[1]);
+			buffer[rp+2] = int(255.99*col[2]);
+		}
+	}
+
+	stbi_write_png("out3.png", 100, 100, STRIDE, buffer, 100*STRIDE);
+
+}
+
 int main() {
 
 
 	test_stb_write();
 	test_stb_write2();
+	testvec1();
 
 	return 0;
 }

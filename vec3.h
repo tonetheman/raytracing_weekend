@@ -13,6 +13,10 @@ public:
 	}
 	inline float x() const { return e[0]; }
 
+
+	inline float operator[](int i) const { return e[i]; }
+	inline float& operator[](int i) { return e[i]; }
+
 	// unary plus
 	inline const vec3& operator+() const { return *this; }
 
