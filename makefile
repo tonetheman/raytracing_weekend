@@ -9,5 +9,6 @@ mainline : mainline.cpp vec3.cpp vec3.h
 
 clean :
 	rm -rf mainline
+	rm -rf chap3
 
 
