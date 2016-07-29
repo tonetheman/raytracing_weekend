@@ -26,9 +26,7 @@ public:
 
 	inline vec3& operator+=(const vec3 &v2);
 	inline vec3& operator-=(const vec3 &v2);
-	inline vec3& operator*=(const vec3 &v2);
 	inline vec3& operator/=(const vec3 &v2);
-	inline vec3& operator*=(const float t);
 	inline vec3& operator/=(const float t);
 
 	inline float length() const {
@@ -40,5 +38,10 @@ public:
 	inline void make_unit_vector();
 
 };
+
+inline vec3 operator*(const vec3 &v1, const vec3 &v2);
+inline vec3 operator*(float t, const vec3 &v);
+inline vec3 operator*(const vec3 &v, float t);
+
 
 #endif
