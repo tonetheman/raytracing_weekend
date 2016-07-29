@@ -94,11 +94,12 @@ void testvec2() {
 
 int main() {
 
-
 	test_stb_write();
 	test_stb_write2();
 	testvec1();
 	testvec2();
+
+	vec3 t(0.0, 0.0, 0.0);
 
 	return 0;
 }
