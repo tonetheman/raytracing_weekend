@@ -29,6 +29,10 @@ public:
 	inline vec3& operator/=(const float t);
 
 	inline float length() const {
+		// this is really the distance from origin for this
+		// point, pythag theorem
+		// we know the x y z distances this shows the distance
+		// from origin to that point in 3d space
 		return sqrt(e[0]*e[0] + e[1]*e[1] + e[2]*e[2]);
 	}
 	inline float squared_length() const {
