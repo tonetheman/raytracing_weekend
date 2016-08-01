@@ -24,6 +24,11 @@ void write_ppm(unsigned char * buffer, int width, int height,
 	fclose(outf);
 }
 
+vec3 make_color(const ray& r) {
+	vec3 unit_direction = unit_vector(r.direction());
+
+}
+
 int main() {
 
 	const int W=800;
@@ -34,9 +39,31 @@ int main() {
 
 	vec3 origin(0,0,0);
 
+	// the horizontal size of the view plane
+	vec3 horizontal(4,0,0);
+
+	// vertical size of the view plane
+	vec3 vertical(0,2,0);
+
+	vec3 lower_left_corner(-2,-1,-1);
+
 	for(int i=0;i<W*H;i++) {
+	
 		const int xx = i%W;
 		const int yy = i/W;
+
+		const float u = float(xx) / float(W);
+		const float v = float(yy) /float(H);
+
+		//std::cout << "pixel " << xx << " " << yy << 
+		//	" " << u << " " << v << std::endl;
+
+		// create a ray from the origin
+		// that streches to another point
+		// defined by lower left corner + percent*horizontal size
+		//	+ percent*vertical size
+
+		ray r(origin, lower_left_corner + u*horizontal + v*vertical);
 
 		int pixel = yy*W + xx;
 		buffer[pixel] = 0;
