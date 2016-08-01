@@ -2,5 +2,7 @@ mainline
 chap3
 chap4
 chap5
+chap3_simple
 *.png
+*.ppm
 
