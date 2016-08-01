@@ -52,6 +52,8 @@ int main() {
 		const int xx = i%W;
 		const int yy = i/W;
 
+		// get a percentage of where you are in X
+		// and in Y
 		const float u = float(xx) / float(W);
 		const float v = float(yy) /float(H);
 
@@ -64,6 +66,9 @@ int main() {
 		//	+ percent*vertical size
 
 		ray r(origin, lower_left_corner + u*horizontal + v*vertical);
+
+		// TODO: determine color here of what is at the end of
+		// the ray r
 
 		int pixel = yy*W + xx;
 		buffer[pixel] = 0;
